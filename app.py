@@ -20,7 +20,7 @@ def main():
         # Create a dataframe
         df = load_data("data.csv")
         # Display the map
-        fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="basic",zoom=10)
+        fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="light",zoom=10)
         st.plotly_chart(fig,use_container_width=True)
     else:
         st.subheader("Data")
