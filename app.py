@@ -23,8 +23,7 @@ def main():
         fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="dark",zoom=10)
         fig.update_layout(height=600)
         fig.update_traces(marker=dict(color='red',
-                                      line=dict(width=2,color='orange')),
-                          selector=dict(mode='markers'))
+                                      line=dict(width=2,color='orange')))
         st.plotly_chart(fig,use_container_width=True,heigth=600)
     else:
         st.subheader("Data")
