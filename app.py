@@ -21,7 +21,8 @@ def main():
         df = load_data("data.csv")
         # Display the map
         fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="light",zoom=10)
-        st.plotly_chart(fig,use_container_width=True)
+        fig.update_layout(height=800)
+        st.plotly_chart(fig,use_container_width=True,heigth=800)
     else:
         st.subheader("Data")
         df = load_data("data.csv")
