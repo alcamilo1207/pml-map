@@ -21,8 +21,10 @@ def main():
         df = load_data("data.csv")
         # Display the map
         fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="dark",zoom=11)
+        fig.data[0].marker.line.width = 4
+        fig.data[0].marker.line.color = "black"
         fig.update_layout(height=600)
-        fig.update_traces(mode='markers', marker_line_width=2)
+        #fig.update_traces(mode='markers', marker_line_width=2)
         st.plotly_chart(fig,use_container_width=True,heigth=600)
     else:
         st.subheader("Data")
