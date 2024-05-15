@@ -20,9 +20,9 @@ def main():
         # Create a dataframe
         df = load_data("data.csv")
         # Display the map
-        fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="light",zoom=10)
-        fig.update_layout(height=800)
-        st.plotly_chart(fig,use_container_width=True,heigth=800)
+        fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="light",zoom=10,color=["red"] * 8)
+        fig.update_layout(height=600)
+        st.plotly_chart(fig,use_container_width=True,heigth=600)
     else:
         st.subheader("Data")
         df = load_data("data.csv")
