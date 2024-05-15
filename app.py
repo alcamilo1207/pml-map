@@ -11,7 +11,7 @@ def load_data(data):
 def main():
     st.set_page_config(layout="wide")
 
-    st.title("Mapa PML")
+    st.subheader("Mapa PML")
     menu = ["Inicio","Sobre nosotros"]
 
     choice = st.sidebar.selectbox("Menu",menu)
@@ -20,7 +20,7 @@ def main():
         # Create a dataframe
         df = load_data("data.csv")
         # Display the map
-        fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="dark",zoom=12)
+        fig = px.scatter_mapbox(df,lat="Latitude",lon="Longitude",hover_name="Name",size="total_miembros",mapbox_style="dark",zoom=10)
         fig.update_layout(height=600)
         fig.update_traces(marker=dict(color="red"))
         st.plotly_chart(fig,use_container_width=True,heigth=600)
